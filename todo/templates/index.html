@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+</head>
+<body>
+    <h1>Tasks</h1>
+    <ul>
+        {% for task in tasks %}
+            <li>{{task}}</li>
+        {% empty %}
+            <li>No Tasks</li>
+        {%endfor%}
+    </ul>
+    <form method='get' action='#'>
+        <input type="submit" value="clear" name="clear"/>
+    </form>
+    
+    <a href="{% url 'add' %}">Add a New Task</a>
+</body>
+</html>
